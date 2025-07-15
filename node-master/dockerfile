@@ -1,11 +1,12 @@
 FROM node:latest
-
+ 
 WORKDIR /usr/src/app
-
-COPY node-master/package*.json ./
+ 
+COPY package.json ./
+ 
 RUN npm install
-
-COPY node-master/ ./
-
+ 
+COPY . .
+ 
 EXPOSE 4000
 CMD [ "node", "index.js" ]
